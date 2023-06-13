@@ -1,0 +1,27 @@
+
+:root {
+
+    /**
+     * colors
+     */
+  
+    --rich-black-fogra-29: hsl(210, 26%, 7%);
+    --champagne-pink_20: hsla(23, 61%, 86%, 0.2);
+    --independence_30: hsla(245, 17%, 29%, 0.3);
+    --gray-x-11-gray: hsl(0, 0%, 73%);
+    --champagne-pink: hsl(23, 61%, 86%);
+    --spanish-gray: hsl(0, 0%, 60%);
+    --sonic-silver: hsl(0, 0%, 47%);
+    --deep-saffron: hsl(32, 100%, 59%);
+    --dark-orange: hsl(28, 100%, 58%);
+    --desert-sand: hsl(23, 49%, 82%);
+    --isabelline: hsl(38, 44%, 96%);
+    --gainsboro: hsl(0, 0%, 87%);
+    --tangerine: hsl(31, 84%, 50%);
+    --cinnabar: hsl(3, 90%, 55%);
+    --black_95: hsla(0, 0%, 0%, 0.95);
+    --cultured: hsl(0, 0%, 93%);
+    --white: hsl(0, 0%, 100%);
+    --black: hsl(0, 0%, 0%);
+    --onyx: hsl(0, 0%, 27%);
+}
