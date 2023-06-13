@@ -79,3 +79,20 @@
     padding: 0;
     box-sizing: border-box;
   }
+  
+  li { list-style: none; }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  a,
+  img,
+  svg,
+  span,
+  input,
+  select,
+  button,
+  textarea,
+  ion-icon { display: block; }
