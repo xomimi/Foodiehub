@@ -1,0 +1,22 @@
+/* styles.css */
+#review-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+}
