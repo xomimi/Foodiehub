@@ -1,10 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <title>Food Ordering System - Checkout</title>
+  <link rel="stylesheet" href="checkout.css" />
+  <style></style>
 </head>
 <body>
-
+<div class="container">
+  <h1>Checkout</h1>
+  <form>
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required />
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+    </div>
+    <div class="form-group">
+      <label for="phone">Phone:</label>
+      <input type="tel" id="phone" name="phone" required />
+    </div>
+    <div class="form-group">
+      <input type="submit" value="Place Order" />
+    </div>
+  </form>
+</div>
 </body>
 </html>
