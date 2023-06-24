@@ -24,7 +24,7 @@ document
         document.getElementById("rating").value = "";
         document.getElementById("comments").value = "";
     });
-
+// rojina
 document.querySelectorAll(".star").forEach(function (star) {
     star.addEventListener("click", function () {
         var rating = this.getAttribute("data-rating");
