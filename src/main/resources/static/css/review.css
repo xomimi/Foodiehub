@@ -20,3 +20,41 @@ textarea {
     padding: 5px;
     border: 1px solid #ccc;
 }
+
+button {
+    padding: 10px 20px;
+    background-color: #af7d4c;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#reviews-container {
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+}
+
+.review {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+#average-rating {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.rating-stars {
+    display: flex;
+    align-items: center;
+}
+
+.star {
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.highlight {
+    color: gold;
+}
