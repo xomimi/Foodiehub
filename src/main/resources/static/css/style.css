@@ -5,6 +5,11 @@
     font-family: sans-serif;
 }
 
+:root{
+    --rich-black-fogra-29: hsl(210, 26%, 7%);
+    --champagne-pink_20: hsla(23, 61%, 86%, 0.2);
+}
+
 html{
     scroll-behavior: smooth;
 }
