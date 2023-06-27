@@ -24,10 +24,23 @@ html{
     scroll-behavior: smooth;
 }
 /*------------------ Search Container -----------------*/
-.search-container{
-    position: absolute;
-    height: 100vh;
-    width: 200vh;
+.search-container {
+    position: fixed;
+    top: -60%;
+    left: 0;
+    width: 100%;
+    height: 110%;
+    background-color: var(--isabelline);
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: center; */
+    padding-inline: 15px;
+    /* z-index: 5; */
+    z-index: -5;
+    visibility: hidden;
+    opacity: 0;
+    transition: var(--transition-2);
 }
 section{
     width: 100%;
