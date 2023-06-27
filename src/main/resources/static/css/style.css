@@ -10,6 +10,11 @@
     --champagne-pink_20: hsla(23, 61%, 86%, 0.2);
     --independence_30: hsla(245, 17%, 29%, 0.3);
     --gray-x-11-gray: hsl(0, 0%, 73%);
+
+
+    --ff-shadows-into-light: 'Shadows Into Light', cursive;
+    --ff-roboto: 'Roboto', sans-serif;
+    --ff-rubik: 'Rubik', sans-serif;
 }
 
 html{
