@@ -15,6 +15,9 @@
     --ff-shadows-into-light: 'Shadows Into Light', cursive;
     --ff-roboto: 'Roboto', sans-serif;
     --ff-rubik: 'Rubik', sans-serif;
+
+    --shadow-1: 0 1px 4px hsla(0, 0%, 0%, 0.2);
+    --shadow-2: 0 1px 2px hsla(0, 0%, 0%, 0.2);
 }
 
 html{
