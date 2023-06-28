@@ -5,14 +5,42 @@
     font-family: sans-serif;
 }
 
+:root{
+    --rich-black-fogra-29: hsl(210, 26%, 7%);
+    --champagne-pink_20: hsla(23, 61%, 86%, 0.2);
+    --independence_30: hsla(245, 17%, 29%, 0.3);
+    --gray-x-11-gray: hsl(0, 0%, 73%);
+
+
+    --ff-shadows-into-light: 'Shadows Into Light', cursive;
+    --ff-roboto: 'Roboto', sans-serif;
+    --ff-rubik: 'Rubik', sans-serif;
+
+    --shadow-1: 0 1px 4px hsla(0, 0%, 0%, 0.2);
+    --shadow-2: 0 1px 2px hsla(0, 0%, 0%, 0.2);
+}
+
 html{
     scroll-behavior: smooth;
 }
 /*------------------ Search Container -----------------*/
-.search-container{
-    position: absolute;
-    height: 100vh;
-    width: 200vh;
+.search-container {
+    position: fixed;
+    top: -60%;
+    left: 0;
+    width: 100%;
+    height: 110%;
+    background-color: var(--isabelline);
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: center; */
+    padding-inline: 15px;
+    /* z-index: 5; */
+    z-index: -5;
+    visibility: hidden;
+    opacity: 0;
+    transition: var(--transition-2);
 }
 section{
     width: 100%;
