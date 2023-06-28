@@ -1,4 +1,4 @@
 package com.example.food_order.services;
 
-public interface HomePage {
+public interface HomePageService {
 }
