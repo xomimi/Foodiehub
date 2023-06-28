@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.List;
 
 public interface UserService {
-    UserDto save(UserDto userPojo) throws IOException;
+    UserDto save(UserDto userDto) throws IOException;
 
     List<User> fetchAll();
 
