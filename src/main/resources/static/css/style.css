@@ -51,13 +51,7 @@ html{
 
   .search-box {
     /* position: relative; */
-    display: flex;
-    column-gap: 2rem;
-    width: 100%;
-    max-width: 500px;
-    height: 10%;
-    margin-top: 2em;
-    align-items: center;
+ 
   }
   
   
