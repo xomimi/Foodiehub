@@ -61,7 +61,12 @@ html{
   }
 
   .search-input {
-  
+    color: var(--black);
+    font-size: 2rem;
+    padding: 15px 12px;
+    padding-inline-end: 70px;
+    margin-top: 1em;
+    margin-right: 1em;
 }
   
   
