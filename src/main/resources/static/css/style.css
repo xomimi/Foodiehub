@@ -71,7 +71,10 @@ html{
 .search-input::placeholder {
     color: var(--spanish-gray);
   }
-  
+  .search-input::-webkit-search-cancel-button {
+    display: none;
+  }
+   
 section{
     width: 100%;
     height: 100vh;
