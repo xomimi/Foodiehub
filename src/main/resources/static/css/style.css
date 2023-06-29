@@ -68,7 +68,9 @@ html{
     margin-top: 1em;
     margin-right: 1em;
 }
-  
+.search-input::placeholder {
+    color: var(--spanish-gray);
+  }
   
 section{
     width: 100%;
