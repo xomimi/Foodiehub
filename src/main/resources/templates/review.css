@@ -22,7 +22,7 @@ textarea {
 }
 
 button {
-    padding: 10px 25px;
+    padding: 10px 30px;
 
     background-color: #af7d4c;
     color: white;
@@ -47,7 +47,7 @@ button {
 }
 
 .rating-stars {
-    display: flex;
+    display:flex;
     align-items: center;
 }
 
