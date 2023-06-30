@@ -1,0 +1,54 @@
+/* CSS styles */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url("bbb.jpg");
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+/* This is the design of checkout page */
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    /* background-color: #fff; */
+}
+
+h1 {
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.form-group input[type="submit"] {
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.form-group input[type="submit"]:hover {
+    background-color: #45a049;
+}
