@@ -96,6 +96,27 @@ html {
   cursor: url("close.png"), auto;
 }
 
+/* -------------FOOD
+  ITEM
+  CONTAINER
+  ----------------------- */
+  .food-item-container {
+    width: 100%;
+    height: 78%;
+    /* border: 2px solid red; */
+    margin-top: 1em;
+    /* display: flex;
+      flex-wrap: wrap; */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+    /* overflow-x: none; */
+    padding: 1em;
+    gap: 1em;
+  }
+
 
 section {
   width: 100%;
