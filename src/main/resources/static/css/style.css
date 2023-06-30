@@ -84,6 +84,12 @@ html {
   transition: var(--transition-1);
   margin-top: 0rem;
 }
+
+.search-submit:is(:hover, :focus) {
+  color: var(--gainsboro);
+}
+
+
 section {
   width: 100%;
   height: 100vh;
