@@ -89,6 +89,13 @@ html {
   color: var(--gainsboro);
 }
 
+.search-close-btn {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  cursor: url("close.png"), auto;
+}
+
 
 section {
   width: 100%;
