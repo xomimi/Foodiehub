@@ -48,18 +48,31 @@
                     Not a member? <a href="">Signup now</a>
                 </div>
             </form>
-            <form action="#" class="signup">
+            <form action="#" th:method="@{post}" th:action="@{/user/create}"
+                  th:object="${user}" class="signup">
                 <div class="field">
-                    <input type="text" placeholder="Username" required>
+<!--                    <input type="text" placeholder="Username" required>-->
+                    <input type="text" th:field="*{fullname}" th:value="${user.fullname}"placeholder="Full Name"/>
+                    <p th:if="${requestError!=null}"
+                       th:text="${requestError['fullname']}"></p>
                 </div>
                 <div class="field">
-                    <input type="text" placeholder="Email Address" required>
+<!--                    <input type="text" placeholder="Email Address" required>-->
+                    <input type="number" th:field="*{mobile_no}" th:value="${user.mobile_no}"placeholder="Phone Number"/>
+                    <p th:if="${requestError!=null}"
+                       th:text="${requestError['mobile_no']}"></p>
                 </div>
                 <div class="field">
-                    <input type="password" placeholder="Password" required>
+<!--                    <input type="password" placeholder="Password" required>-->
+                    <input type="text" th:field="*{email}" th:value="${user.email}" placeholder="Email"/>
+                    <p th:if="${requestError!=null}"
+                       th:text="${requestError['email']}"></p>
                 </div>
                 <div class="field">
-                    <input type="password" placeholder="Confirm password" required>
+<!--                    <input type="password" placeholder="Confirm password" required>-->
+                    <input type="password" th:field="*{password}" th:value="${user.password}" placeholder="Password"/>
+                    <p th:if="${requestError!=null}"
+                       th:text="${requestError['password']}"></p>
                 </div>
 
                 <div class="field btn">
