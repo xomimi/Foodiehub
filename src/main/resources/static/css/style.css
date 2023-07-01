@@ -138,6 +138,11 @@ html {
   margin-top: 8px;
   /* vertical-align: middle; */
 }
+@media (width <= 500px) {
+  .food-item-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
 
 
 section {
