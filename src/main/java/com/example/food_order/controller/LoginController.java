@@ -1,8 +1,10 @@
 package com.example.food_order.controller;
+import com.example.food_order.dto.UserDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,7 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequiredArgsConstructor
 public class LoginController {
     @GetMapping("/login")
-    public String getpage() {
+    public String getpage(Model model) {
+        model.addAttribute("user", new UserDto());
         return "login";
     }
     @PostMapping("/logout")
