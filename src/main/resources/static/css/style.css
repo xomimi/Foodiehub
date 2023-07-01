@@ -10,6 +10,13 @@
   --champagne-pink_20: hsla(23, 61%, 86%, 0.2);
   --independence_30: hsla(245, 17%, 29%, 0.3);
   --gray-x-11-gray: hsl(0, 0%, 73%);
+  --isabelline: hsl(38, 44%, 96%);
+  --black: hsl(0, 0%, 0%);
+  --gainsboro: hsl(0, 0%, 87%);
+  --onyx: hsl(0, 0%, 27%);
+
+  --transition-1: 0.25s ease;
+  --transition-2: 0.5s ease;
 
   --ff-shadows-into-light: "Shadows Into Light", cursive;
   --ff-roboto: "Roboto", sans-serif;
