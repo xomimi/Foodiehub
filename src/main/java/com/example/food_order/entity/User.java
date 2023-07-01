@@ -37,10 +37,10 @@ public class User implements UserDetails {
     @Column(name = "password", nullable = false)
     private String password;
 
-    private String image;
-
-    @Transient
-    private String imageBase64;
+//    private String image;
+//
+//    @Transient
+//    private String imageBase64;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "wpms_users_roles",
