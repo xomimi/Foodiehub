@@ -12,6 +12,7 @@
   --gray-x-11-gray: hsl(0, 0%, 73%);
   --isabelline: hsl(38, 44%, 96%);
   --black: hsl(0, 0%, 0%);
+  --spanish-gray: hsl(0, 0%, 60%);
   --gainsboro: hsl(0, 0%, 87%);
   --onyx: hsl(0, 0%, 27%);
 
@@ -123,6 +124,11 @@ html {
     padding: 1em;
     gap: 1em;
   }
+.column {
+  flex: 25%;
+  max-width: 25%;
+  padding: 5px 0px 0px 0px;
+}
 
 
 section {
