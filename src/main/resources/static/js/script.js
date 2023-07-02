@@ -1,26 +1,43 @@
-document.getElementById('itemForm').addEventListener('submit', addItem);
+// Get the sidebar and content elements
+const sidebar = document.querySelector('.sidebar');
+const content = document.querySelector('.content');
 
-function addItem(event) {
-  event.preventDefault();
+// Get the list items in the sidebar
+const sidebarItems = sidebar.querySelectorAll('li');
 
-  // Get input values
-  var itemName = document.getElementById('itemName').value;
-  var itemDescription = document.getElementById('itemDescription').value;
-  var itemImage = document.getElementById('itemImage').value;
-  var price = document.getElementById('price').value;
+// Add click event listeners to sidebar items
+sidebarItems.forEach((item) => {
+  item.addEventListener('click', (event) => {
+    // Prevent default link behavior
+    event.preventDefault();
 
-  // Create a new item object
-  var newItem = {
-    name: itemName,
-    description: itemDescription,
-    image: itemImage
-  };
+    // Remove the 'active' class from all sidebar items
+    sidebarItems.forEach((sidebarItem) => {
+      sidebarItem.classList.remove('active');
+    });
 
-  // Clear form fields
-  document.getElementById('itemName').value = '';
-  document.getElementById('itemDescription').value = '';
-  document.getElementById('itemImage').value = '';
+    // Add the 'active' class to the clicked sidebar item
+    item.classList.add('active');
 
-  // Send the new item to the server for processing (AJAX request)
-  // You can add your server-side code here to handle the item addition
+    // Get the href of the clicked sidebar item
+    const href = item.querySelector('a').getAttribute('href');
+
+    // Load the corresponding content page using AJAX or fetch API
+    loadContentPage(href);
+  });
+});
+
+// Function to load content page
+function loadContentPage(url) {
+  // Perform AJAX or fetch request to load the content page
+  // Here's an example using fetch API
+  fetch(url)
+      .then((response) => response.text())
+      .then((data) => {
+        // Update the content section with the loaded page
+        content.innerHTML = data;
+      })
+      .catch((error) => {
+        console.log('Error loading page:', error);
+      });
 }
