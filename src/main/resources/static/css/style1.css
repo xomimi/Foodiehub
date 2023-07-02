@@ -1,53 +1,85 @@
 body {
-  background-image: url('food.jpeg');
-  background-size: cover;
   font-family: Arial, sans-serif;
+}
+
+.sidebar {
+  width: 200px;
+  background-color: #333;
   color: #fff;
-}
-
-.container {
-  max-width: 500px;
-  margin: 0 auto;
   padding: 20px;
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  position: fixed;
+  height: 100%;
 }
 
-h1 {
-  text-align: center;
-}
-
-.form-group {
+.sidebar h2 {
   margin-bottom: 20px;
 }
 
-label {
-  display: block;
-  font-size: 18px;
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
-input[type="text"],
-textarea {
+.sidebar li {
+  margin-bottom: 10px;
+}
+
+.sidebar li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.sidebar li.active a {
+  font-weight: bold;
+}
+
+.content {
+  margin-left: 200px;
+  padding: 20px;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+}
+
+form {
+  display: grid;
+  gap: 10px;
+}
+
+.form-group {
+  display: grid;
+}
+
+label {
+  font-weight: bold;
+}
+
+input, textarea {
   width: 100%;
+  padding: 5px;
+  font-size: 16px;
+}
+
+button {
   padding: 10px;
   font-size: 16px;
-  border-radius: 5px;
-  border: none;
-}
-
-button[type="submit"] {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  font-size: 18px;
-  background-color: #4caf50;
+  background-color: #4CAF50;
   color: #fff;
   border: none;
-  border-radius: 5px;
   cursor: pointer;
 }
 
-button[type="submit"]:hover {
+button:hover {
   background-color: #45a049;
 }

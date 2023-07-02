@@ -5,27 +5,44 @@
   <link rel="stylesheet" type="text/css" href="style1.css">
 </head>
 <body>
+<div class="sidebar">
+  <h2>Admin Panel</h2>
+  <ul>
+    <li class="active"><a href="#">Add Item</a></li>
+    <li><a href="#">Edit Item</a></li>
+    <li><a href="#">Delete Item</a></li>
+  </ul>
+</div>
+
+<div class="content">
+  <header>
+    <h1>Food Delivery Admin Page</h1>
+  </header>
+
   <div class="container">
-    <h1>Add Item</h1>
-    <form id="itemForm">
+    <form id="item-form">
+      <h2>Add New Item</h2>
       <div class="form-group">
-        <label for="itemName">Item Name:</label>
-        <input type="text" id="itemName" name="itemName" required>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
       </div>
       <div class="form-group">
-        <label for="itemDescription">Item Description:</label>
-        <textarea id="itemDescription" name="itemDescription" required></textarea>
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" required></textarea>
+      </div>
+      <div class="form-group">
         <label for="price">Price:</label>
-      <input type="number" id="price" name="price" step="0.01" required>
+        <input type="number" id="price" name="price" required>
       </div>
       <div class="form-group">
-        <label for="itemImage">Item Image:</label>
-        <input type="file" id="itemImage" name="itemImage">
+        <label for="image">Image:</label>
+        <input type="file" id="image" name="image" accept="image/*" required>
       </div>
       <button type="submit">Add Item</button>
     </form>
   </div>
+</div>
 
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
