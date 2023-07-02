@@ -15,6 +15,7 @@
   --spanish-gray: hsl(0, 0%, 60%);
   --gainsboro: hsl(0, 0%, 87%);
   --onyx: hsl(0, 0%, 27%);
+  --white: #fff;
 
   --transition-1: 0.25s ease;
   --transition-2: 0.5s ease;
@@ -155,7 +156,15 @@ html {
   }
 }
 /* --------------------FOod Item Container Ends here----------------------- */
+/*--------------------------- FOod menu Card ------------------------------*/
 
+.food-menu-card {
+  background-color: var(--white);
+  padding: 40px;
+  box-shadow: var(--shadow-2);
+}
+
+/*--------------------------- FOod menu Card Ends Here------------------------------*/
 
 section {
   width: 100%;
