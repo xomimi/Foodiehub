@@ -163,6 +163,8 @@ html {
   padding: 40px;
   box-shadow: var(--shadow-2);
 }
+.food-menu-card:focus-within { outline: 1px auto -webkit-focus-ring-color; }
+
 
 /*--------------------------- FOod menu Card Ends Here------------------------------*/
 

@@ -35,7 +35,7 @@ public class ItemController {
         for(int i = 0; i < itm; i++){
             items1.add(items.get(i));
         }
-        if(items.size())
+//        if(items.size())
         itm += 9;
         return items1;
     }
