@@ -8,7 +8,8 @@
 </head>
 <body>
 <div class="wrapper">
-    <img src ="image/user-Icon.png">
+<!--    <img th:src ="image/user-Icon.png">-->
+    <img th:src = "@{/image/user-Icon.jpg}">
     <div class="title-text">
         <div class="title login">
             Login Form
@@ -41,8 +42,10 @@
                     <input type="submit" value="Login">
                 </div>
                 <div class="social-icons">
-                    <img src="image/fb.png">
-                    <img src="image/gp.png">
+<!--                    <img src="image/fb.png">-->
+                    <img th:src = "@{/image/fb.png}">
+<!--                    <img src="image/gp.png">-->
+                    <img th:src = "@{/image/gp.png}">
                 </div>
                 <div class="signup-link">
                     Not a member? <a href="">Signup now</a>
@@ -80,8 +83,13 @@
                     <input type="submit" value="Signup">
                 </div>
                 <div class="social-icons">
-                    <img src="image/fb.png">
-                    <img src="image/gp.png">
+<!--                    <img src="image/fb.png">-->
+<!--                    <img src="image/gp.png">-->
+                    <img th:src = "@{/image/fb.png}">
+                    <!--                    <img src="image/gp.png">-->
+                    <img th:src = "@{/image/gp.png}"><img th:src = "@{/image/fb.png}">
+                    <!--                    <img src="image/gp.png">-->
+                    <img th:src = "@{/image/gp.png}">
                 </div>
                 <div class="signin-link">
                     Already a member? <a href="">SignIn now</a>
