@@ -165,6 +165,14 @@ html {
 }
 .food-menu-card:focus-within { outline: 1px auto -webkit-focus-ring-color; }
 
+.food-menu-card .card-banner {
+  position: relative;
+  padding-block-start: 30px;
+  max-width: max-content;
+  aspect-ratio: 1 / 1;
+  margin-inline: auto;
+}
+
 
 /*--------------------------- FOod menu Card Ends Here------------------------------*/
 
