@@ -144,6 +144,12 @@ html {
   }
 }
 
+@media (width > 500px) and (width <= 700px) {
+  .food-item-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 
 section {
   width: 100%;
