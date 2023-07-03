@@ -10,70 +10,188 @@
 </head>
 <body>
 <div class="search-container" data-search-container>
-    <div class="search-box">
-        <input type="search" name="search" aria-label="Search here" onfocus="this.value=''" placeholder="Type keywords here..."
-               class="search-input">
-        <button class="search-submit" aria-label="Submit search" data-search-submit-btn>
-            <ion-icon name="search-outline"></ion-icon>
-        </button>
-    </div>
-    <div class="food-item-container">
-        {% comment %} <!-- -------SEARCH FOOD---------------------------------------------------- --> {% endcomment %}
-        <div class="food-menu-card">
-            <div class="card-banner">
-                <img src="food-menu-6.png" width="300" height="300" loading="lazy"
-                     alt="Fried Chicken Unlimited" class="w-100">
+<!--    <div class="food-item-container">-->
+         <!-- -------SEARCH FOOD---------------------------------------------------- -->
+<!--        <div class="food-menu-card">-->
+<!--            <div class="card-banner">-->
+<!--                <img src="food-menu-6.png" width="300" height="300" loading="lazy"-->
+<!--                     alt="Fried Chicken Unlimited" class="w-100">-->
 
-                <button class="btn food-menu-btn">Order Now</button>
-            </div>
-            <div class="wrapper">
-                <div class="rating-wrapper">
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
+<!--                <button class="btn food-menu-btn">Order Now</button>-->
+<!--            </div>-->
+<!--            <div class="wrapper">-->
+<!--                <div class="rating-wrapper">-->
+<!--                    <ion-icon name="star"></ion-icon>-->
+<!--                    <ion-icon name="star"></ion-icon>-->
+<!--                    <ion-icon name="star"></ion-icon>-->
+<!--                    <ion-icon name="star"></ion-icon>-->
+<!--                    <ion-icon name="star"></ion-icon>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <h3 class="h3 card-title">Fried Chicken Unlimited</h3>-->
+<!--            <div class="price-wrapper">-->
+<!--                <p class="price-text">Price:</p>-->
+
+<!--                <data class="price">$49.00</data>-->
+
+<!--                <del class="del" value="69.00">$69.00</del>-->
+<!--            </div>-->
+<!--        </div>-->
+
+<!--    </div>-->
+        <div class="menu" id="search-menu">
+            <div class="menu_box">
+                <div class="menu_card">
+
+                    <div class="menu_image">
+                        <img src="image/buger.jpg">
+                    </div>
+
+                    <div class="small_card">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+
+                    <div class="menu_info">
+                        <h2>Burger</h2>
+
+                        <h3>$20.00</h3>
+                        <div class="menu_icon">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half-stroke"></i>
+                        </div>
+                        <a href="#" class="menu_btn">Order Now</a>
+                    </div>
+
+                </div> <div class="menu_card">
+
+                    <div class="menu_image">
+                        <img src="image/buger.jpg">
+                    </div>
+
+                    <div class="small_card">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+
+                    <div class="menu_info">
+                        <h2>Burger</h2>
+
+                        <h3>$20.00</h3>
+                        <div class="menu_icon">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half-stroke"></i>
+                        </div>
+                        <a href="#" class="menu_btn">Order Now</a>
+                    </div>
+
+                </div> <div class="menu_card">
+
+                    <div class="menu_image">
+                        <img src="image/buger.jpg">
+                    </div>
+
+                    <div class="small_card">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+
+                    <div class="menu_info">
+                        <h2>Burger</h2>
+
+                        <h3>$20.00</h3>
+                        <div class="menu_icon">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half-stroke"></i>
+                        </div>
+                        <a href="#" class="menu_btn">Order Now</a>
+                    </div>
+
+                </div> <div class="menu_card">
+
+                    <div class="menu_image">
+                        <img src="image/buger.jpg">
+                    </div>
+
+                    <div class="small_card">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+
+                    <div class="menu_info">
+                        <h2>Burger</h2>
+
+                        <h3>$20.00</h3>
+                        <div class="menu_icon">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half-stroke"></i>
+                        </div>
+                        <a href="#" class="menu_btn">Order Now</a>
+                    </div>
+
+                </div> <div class="menu_card">
+
+                    <div class="menu_image">
+                        <img src="image/buger.jpg">
+                    </div>
+
+                    <div class="small_card">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+
+                    <div class="menu_info">
+                        <h2>Burger</h2>
+
+                        <h3>$20.00</h3>
+                        <div class="menu_icon">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half-stroke"></i>
+                        </div>
+                        <a href="#" class="menu_btn">Order Now</a>
+                    </div>
+
+                </div> <div class="menu_card">
+
+                    <div class="menu_image">
+                        <img src="image/buger.jpg">
+                    </div>
+
+                    <div class="small_card">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+
+                    <div class="menu_info">
+                        <h2>Burger</h2>
+
+                        <h3>$20.00</h3>
+                        <div class="menu_icon">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half-stroke"></i>
+                        </div>
+                        <a href="#" class="menu_btn">Order Now</a>
+                    </div>
+
                 </div>
             </div>
-            <h3 class="h3 card-title">Fried Chicken Unlimited</h3>
-            <div class="price-wrapper">
-                <p class="price-text">Price:</p>
-
-                <data class="price">$49.00</data>
-
-                <del class="del" value="69.00">$69.00</del>
-            </div>
         </div>
-        <div class="menu_card">
-
-            <div class="menu_image">
-                <img src="image/Hot_dog.jpg">
-            </div>
-
-            <div class="small_card">
-                <i class="fa-solid fa-heart"></i>
-            </div>
-
-            <div class="menu_info">
-                <h2>Hot Dog</h2>
-
-                <h3>$20.00</h3>
-                <div class="menu_icon">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star-half-stroke"></i>
-                </div>
-                <a href="#" class="menu_btn">Order Now</a>
-            </div>
-
-        </div>
-    </div>
     <button class="search-close-btn" aria-label="Cancel search" data-search-close-btn></button>
 </div>
 
-{% comment %} Search Box Ends Here {% endcomment %}
+<!-- Search Box Ends Here -->
 <section id="Home">
     <nav>
         <div class="logo">
@@ -90,6 +208,8 @@
         </ul>
 
         <div class="icon">
+            <input type="text" class="">
+            <input type="submit">
             <i class="fa-solid fa-magnifying-glass search-btn" data-search-btn></i>
             <i class="fa-solid fa-heart"></i>
             <i class="fa-solid fa-cart-shopping"></i>

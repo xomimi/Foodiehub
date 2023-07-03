@@ -172,7 +172,29 @@ html {
   aspect-ratio: 1 / 1;
   margin-inline: auto;
 }
+.food-menu-card .badge {
+  top: 0;
+  left: 0;
+}
 
+.food-menu-btn {
+  position: absolute;
+  top: calc(50% + 15px);
+  left: 50%;
+  transform: translate(-50%, 0);
+  min-width: max-content;
+  --bg-color: var(--cinnabar);
+  width: 60%;
+  --height: 40px;
+  --padding-inline: 20px;
+  opacity: 0;
+  transition: var(--transition-2);
+}
+
+#search-menu{
+  width: 100%;
+  height: 78%;
+}
 
 /*--------------------------- FOod menu Card Ends Here------------------------------*/
 
