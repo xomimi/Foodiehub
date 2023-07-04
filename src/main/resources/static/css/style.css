@@ -502,6 +502,86 @@ section .main_btn:hover i {
   transition: .4s;
   background: #f2f2f2;
 }
+.context:hover{
+  box-sizing: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  transform: translate(0px, -8px);
+}
+
+.context img {
+  width: 249px;
+  height: 200px;
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+}
+.context h3 {
+  text-align: center;
+  font-size: 30px;
+  margin: 0;
+}
+
+.context h6{
+  font-size: 26px;
+  text-align: center;
+  color: #222f3e;
+  margin: 0;
+}
+
+.context ul{
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+.context li{
+  padding: 5px;
+}
+
+.context .fa{
+  font-size: 26px;
+  transition: .4s;
+  margin: 3px;
+}
+
+.context .checked{
+  color:#ff9f43;
+}
+
+.context .fa:hover{
+  transform: scale(1.3);
+  transition: .6s;
+}
+
+button{
+  text-align: center;
+  font-size: 24px;
+  color: #fff;
+  width: 100%;
+  padding: 15px;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  margin-top: 5px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.buy-all{
+  background: #1f1f1f;
+}
+
+@media(max-width:1000px){
+  .context{
+    width: 45%;
+  }
+}
+@media(max-width: 750px){
+  .context{
+    width: 100%;
+  }
+}
 /*Gallary*/
 
 .gallary {
