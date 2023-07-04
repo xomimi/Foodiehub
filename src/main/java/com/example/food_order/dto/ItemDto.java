@@ -27,7 +27,7 @@ public class ItemDto {
     @NotEmpty(message = "Image can't be empty")
     private String image;
 
-    ItemDto(Item item){
+    public ItemDto(Item item){
         this.id = item.getId();
         this.name = item.getName();
         this.price = item.getPrice();
