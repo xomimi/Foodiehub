@@ -469,6 +469,17 @@ section .main_btn:hover i {
   transition: 0.3s;
 }
 
+@media(max-width:1000px){
+  .menu_card{
+    width: 45%;
+  }
+}
+@media(max-width: 750px){
+  .menu_card{
+    width: 100%;
+  }
+}
+
 /*Gallary*/
 
 .gallary {
