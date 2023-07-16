@@ -1,10 +1,11 @@
 package com.example.food_order.repo;
 
-
-
 import com.example.food_order.entity.Booking;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface BookingRepository extends JpaRepository<Booking, Long> {
+@Repository
+
+
+public interface BookingRepository extends jpaRepository<Booking, Long> {
+    void save(Booking booking);
 }
-
