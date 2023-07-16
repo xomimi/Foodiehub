@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+  <title>Booking Form</title>
+</head>
+<body>
+<h1>Booking Form</h1>
+
+<form action="#" th:action="@{/tables/{id}/book(id=${bookingForm.table.id})}" th:object="${bookingForm}" method="post">
+  <input type="hidden" th:field="*{table.id}" />
+
+  <label for="name">Name:</label>
+  <input type="text" id="name" th:field="*{name}" required><br><br>
+
+  <label for="date">Date:</label>
+  <input type="date" id="date" th:field="*{date}" required><br><br>
+
+  <label for="time">Time:</label>
+  <input type="time" id="time" th:field="*{time}" required><br><br>
+
+  <input type="submit" value="Book Now">
+</form>
+</body>
+</html>

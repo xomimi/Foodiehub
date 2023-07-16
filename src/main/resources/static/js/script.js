@@ -1,43 +1,47 @@
-// Get the sidebar and content elements
-const sidebar = document.querySelector('.sidebar');
-const content = document.querySelector('.content');
+document.getElementById('bookingForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form submission
 
-// Get the list items in the sidebar
-const sidebarItems = sidebar.querySelectorAll('li');
+    // Get form values
+    var name = document.getElementById('name').value;
+    var date = document.getElementById('date').value;
+    var time = document.getElementById('time').value;
 
-// Add click event listeners to sidebar items
-sidebarItems.forEach((item) => {
-  item.addEventListener('click', (event) => {
-    // Prevent default link behavior
-    event.preventDefault();
+    // Create request body
+    var requestBody = {
+        name: name,
+        date: date,
+        time: time
+    };
 
-    // Remove the 'active' class from all sidebar items
-    sidebarItems.forEach((sidebarItem) => {
-      sidebarItem.classList.remove('active');
-    });
+    // Send POST request to backend
+    fetch('/booking', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(requestBody)
+    })
+        .then(function(response) {
+            if (response.ok) {
+                return response.json(); // Parse the response JSON
+            } else {
+                throw new Error('Failed to book table. Please try again.');
+            }
+        })
+        .then(function(data) {
+            // Display the booking details
+            document.getElementById('bookingName').textContent = data.name;
+            document.getElementById('bookingDate').textContent = data.date;
+            document.getElementById('bookingTime').textContent = data.time;
 
-    // Add the 'active' class to the clicked sidebar item
-    item.classList.add('active');
+            // Show the booking details section
+            document.getElementById('bookingDetails').style.display = 'block';
 
-    // Get the href of the clicked sidebar item
-    const href = item.querySelector('a').getAttribute('href');
-
-    // Load the corresponding content page using AJAX or fetch API
-    loadContentPage(href);
-  });
+            // Clear the form
+            document.getElementById('bookingForm').reset();
+        })
+        .catch(function(error) {
+            alert('An error occurred. Please try again later.');
+            console.error('Error:', error);
+        });
 });
-
-// Function to load content page
-function loadContentPage(url) {
-  // Perform AJAX or fetch request to load the content page
-  // Here's an example using fetch API
-  fetch(url)
-      .then((response) => response.text())
-      .then((data) => {
-        // Update the content section with the loaded page
-        content.innerHTML = data;
-      })
-      .catch((error) => {
-        console.log('Error loading page:', error);
-      });
-}
