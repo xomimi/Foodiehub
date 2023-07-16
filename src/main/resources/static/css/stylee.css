@@ -10,7 +10,7 @@ html,body{
     width: 100%;
     place-items: center;
     font-family: sans-serif;
-    background-image: url(image/shoes.jpg);
+    background-image: url(/image/food.jpeg);
     background-size: contain;
     background-position: center;
 }
