@@ -3,12 +3,13 @@
 <head>
     <meta charset="utf-8">
     <title>Login and Registration Form</title>
-    <link rel="stylesheet" href="stylee.css">
+    <link rel="stylesheet" th:href="@{/css/stylee.css}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 <div class="wrapper">
-    <img src ="image/user-Icon.png">
+<!--    <img th:src ="image/user-Icon.png">-->
+    <img th:src = "@{/image/user-Icon.jpg}">
     <div class="title-text">
         <div class="title login">
             Login Form
@@ -26,12 +27,12 @@
             <div class="slider-tab"></div>
         </div>
         <div class="form-inner">
-            <form action="#" class="login">
+            <form action="#" th:action="@{/login}" th:method="@{post}" class="login">
                 <div class="field">
-                    <input type="text" placeholder="Email Address" required>
+                    <input type="email" name="email" placeholder="Email Address" required>
                 </div>
                 <div class="field">
-                    <input type="password" placeholder="Password" required>
+                    <input type="password" name="password" placeholder="Password" required>
                 </div>
                 <div class="pass-link">
                     <a href="#">Forgot password?</a>
@@ -41,25 +42,40 @@
                     <input type="submit" value="Login">
                 </div>
                 <div class="social-icons">
-                    <img src="image/fb.png">
-                    <img src="image/gp.png">
+<!--                    <img src="image/fb.png">-->
+                    <img th:src = "@{/image/fb.png}">
+<!--                    <img src="image/gp.png">-->
+                    <img th:src = "@{/image/gp.png}">
                 </div>
                 <div class="signup-link">
                     Not a member? <a href="">Signup now</a>
                 </div>
             </form>
-            <form action="#" class="signup">
+            <form action="#" th:method="@{post}" th:action="@{/user/create}"
+                  th:object="${user}" class="signup">
                 <div class="field">
-                    <input type="text" placeholder="Username" required>
+<!--                    <input type="text" placeholder="Username" required>-->
+                    <input type="text" th:field="*{fullname}" th:value="${user.fullname}"placeholder="Full Name"/>
+                    <p th:if="${requestError!=null}"
+                       th:text="${requestError['fullname']}"></p>
                 </div>
                 <div class="field">
-                    <input type="text" placeholder="Email Address" required>
+<!--                    <input type="text" placeholder="Email Address" required>-->
+                    <input type="number" th:field="*{mobile_no}" th:value="${user.mobile_no}"placeholder="Phone Number"/>
+                    <p th:if="${requestError!=null}"
+                       th:text="${requestError['mobile_no']}"></p>
                 </div>
                 <div class="field">
-                    <input type="password" placeholder="Password" required>
+<!--                    <input type="password" placeholder="Password" required>-->
+                    <input type="text" th:field="*{email}" th:value="${user.email}" placeholder="Email"/>
+                    <p th:if="${requestError!=null}"
+                       th:text="${requestError['email']}"></p>
                 </div>
                 <div class="field">
-                    <input type="password" placeholder="Confirm password" required>
+<!--                    <input type="password" placeholder="Confirm password" required>-->
+                    <input type="password" th:field="*{password}" th:value="${user.password}" placeholder="Password"/>
+                    <p th:if="${requestError!=null}"
+                       th:text="${requestError['password']}"></p>
                 </div>
 
                 <div class="field btn">
@@ -67,8 +83,13 @@
                     <input type="submit" value="Signup">
                 </div>
                 <div class="social-icons">
-                    <img src="image/fb.png">
-                    <img src="image/gp.png">
+<!--                    <img src="image/fb.png">-->
+<!--                    <img src="image/gp.png">-->
+                    <img th:src = "@{/image/fb.png}">
+                    <!--                    <img src="image/gp.png">-->
+                    <img th:src = "@{/image/gp.png}"><img th:src = "@{/image/fb.png}">
+                    <!--                    <img src="image/gp.png">-->
+                    <img th:src = "@{/image/gp.png}">
                 </div>
                 <div class="signin-link">
                     Already a member? <a href="">SignIn now</a>
