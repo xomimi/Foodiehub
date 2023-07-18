@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>Booking Form</title>
+  <title>Update Item</title>
   <style>
     /* Add your custom CSS styles here */
     .container {
@@ -18,8 +18,7 @@
       font-weight: bold;
     }
     input[type="text"],
-    input[type="email"],
-    input[type="date"] {
+    input[type="number"] {
       width: 100%;
       padding: 5px;
       border: 1px solid #ccc;
@@ -36,21 +35,18 @@
 </head>
 <body>
 <div class="container">
-  <h2>Booking Form</h2>
-  <form th:action="@{/booking}" method="post">
+  <h2>Update Item</h2>
+  <form th:action="@{/updateItem}" method="post">
+    <input type="hidden" th:name="itemId" th:value="${item.id}"> <!-- Pass the item ID as a hidden field -->
     <div class="form-group">
       <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required>
+      <input type="text" id="name" name="name" th:value="${item.name}" required>
     </div>
     <div class="form-group">
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
+      <label for="price">Price:</label>
+      <input type="number" id="price" name="price" th:value="${item.price}" required>
     </div>
-    <div class="form-group">
-      <label for="date">Date:</label>
-      <input type="date" id="date" name="date" required>
-    </div>
-    <button type="submit">Book Now</button>
+    <button type="submit">Update Item</button>
   </form>
 </div>
 </body>

@@ -1,44 +1,38 @@
 package com.example.food_order.controller;
 
-// BookingController.java
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import com.example.food_order.repo.BookingRepository;
-import com.example.food_order.entity.Booking;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-@RequestMapping("/tables")
 public class BookingController {
-    private final BookingRepository bookingRepository;
 
-    @Autowired
-    public BookingController(BookingRepository bookingRepository) {
-        this.bookingRepository = bookingRepository;
+    @GetMapping("/booking")
+    public String showBookingForm() {
+        return "bookingform";
     }
 
-    @GetMapping("/{id}/book")
-    public String showBookingForm(@ModelAttribute("bookingForm") Booking booking) {
-        return "bookingForm";
+    @PostMapping("/booking")
+    public String processBookingForm(@RequestParam("name") String name,
+                                     @RequestParam("email") String email,
+                                     @RequestParam("date") String date,
+                                     Model model) {
+        // Process the form submission and save the booking details to the database
+        // ...
+
+        // Add the booking details to the model for displaying on the next page
+        model.addAttribute("name", name);
+        model.addAttribute("email", email);
+        model.addAttribute("date", date);
+
+        // Redirect to the success page
+        return "redirect:/success";
     }
 
-    @PostMapping("/{id}/book")
-    public String submitBookingForm(@ModelAttribute("bookingForm") Booking booking, BindingResult result, Model model) {
-        if (result.hasErrors()) {
-            return "bookingForm";
-        }
-
-        // Save the booking to the database
-        bookingRepository.save(booking);
-
-        // Add booking details to the model for displaying on the success page
-        model.addAttribute("booking", booking);
-
-        return "bookingSuccess";
+    @GetMapping("/success")
+    public String showSuccessPage() {
+        return "success";
     }
 }
