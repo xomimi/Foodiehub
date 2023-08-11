@@ -1,6 +1,5 @@
 package com.example.food_order.entity;
 
-
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
@@ -37,10 +36,10 @@ public class User implements UserDetails {
     @Column(name = "password", nullable = false)
     private String password;
 
-//    private String image;
-//
-//    @Transient
-//    private String imageBase64;
+    private String image;
+
+    @Transient
+    private String imageBase64;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "wpms_users_roles",
@@ -55,8 +54,7 @@ public class User implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
-//        return getRoles().stream().map(role -> new SimpleGrantedAuthority(role.getName())).collect(Collectors.toList());
+        return getRoles().stream().map(role -> new SimpleGrantedAuthority(role.getName())).collect(Collectors.toList());
     }
 
 

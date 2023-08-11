@@ -1,121 +1,43 @@
+
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html>
 <head>
-    <meta charset="utf-8">
-    <title>Login and Registration Form</title>
-    <link rel="stylesheet" th:href="@{/css/stylee.css}">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" th:href="@{/css/pom.css}">
 </head>
 <body>
 <div class="wrapper">
-<!--    <img th:src ="image/user-Icon.png">-->
-    <img th:src = "@{/image/user-Icon.jpg}">
-    <div class="title-text">
-        <div class="title login">
-            Login Form
-        </div>
-        <div class="title signup">
-            Signup Form
-        </div>
-    </div>
-    <div class="form-container">
-        <div class="slide-controls">
-            <input type="radio" name="slide" id="login" checked>
-            <input type="radio" name="slide" id="signup">
-            <label for="login" class="slide login">Login</label>
-            <label for="signup" class="slide signup">Signup</label>
-            <div class="slider-tab"></div>
-        </div>
-        <div class="form-inner">
-            <form action="#" th:action="@{/login}" th:method="@{post}" class="login">
-                <div class="field">
-                    <input type="email" name="email" placeholder="Email Address" required>
-                </div>
-                <div class="field">
-                    <input type="password" name="password" placeholder="Password" required>
-                </div>
-                <div class="pass-link">
-                    <a href="#">Forgot password?</a>
-                </div>
-                <div class="field btn">
-                    <div class="btn-layer"></div>
-                    <input type="submit" value="Login">
-                </div>
-                <div class="social-icons">
-<!--                    <img src="image/fb.png">-->
-                    <img th:src = "@{/image/fb.png}">
-<!--                    <img src="image/gp.png">-->
-                    <img th:src = "@{/image/gp.png}">
-                </div>
-                <div class="signup-link">
-                    Not a member? <a href="">Signup now</a>
-                </div>
-            </form>
-            <form action="#" th:method="@{post}" th:action="@{/user/create}"
-                  th:object="${user}" class="signup">
-                <div class="field">
-<!--                    <input type="text" placeholder="Username" required>-->
-                    <input type="text" th:field="*{fullname}" th:value="${user.fullname}"placeholder="Full Name"/>
-                    <p th:if="${requestError!=null}"
-                       th:text="${requestError['fullname']}"></p>
-                </div>
-                <div class="field">
-<!--                    <input type="text" placeholder="Email Address" required>-->
-                    <input type="number" th:field="*{mobile_no}" th:value="${user.mobile_no}"placeholder="Phone Number"/>
-                    <p th:if="${requestError!=null}"
-                       th:text="${requestError['mobile_no']}"></p>
-                </div>
-                <div class="field">
-<!--                    <input type="password" placeholder="Password" required>-->
-                    <input type="text" th:field="*{email}" th:value="${user.email}" placeholder="Email"/>
-                    <p th:if="${requestError!=null}"
-                       th:text="${requestError['email']}"></p>
-                </div>
-                <div class="field">
-<!--                    <input type="password" placeholder="Confirm password" required>-->
-                    <input type="password" th:field="*{password}" th:value="${user.password}" placeholder="Password"/>
-                    <p th:if="${requestError!=null}"
-                       th:text="${requestError['password']}"></p>
-                </div>
+  <div class="headline">
+    <h1>Welcome. We exist to make consignment easier.</h1>
+  </div>
+  <form class="form" th:action="@{/login}" th:method="@{post}">
 
-                <div class="field btn">
-                    <div class="btn-layer"></div>
-                    <input type="submit" value="Signup">
-                </div>
-                <div class="social-icons">
-<!--                    <img src="image/fb.png">-->
-<!--                    <img src="image/gp.png">-->
-                    <img th:src = "@{/image/fb.png}">
-                    <!--                    <img src="image/gp.png">-->
-                    <img th:src = "@{/image/gp.png}"><img th:src = "@{/image/fb.png}">
-                    <!--                    <img src="image/gp.png">-->
-                    <img th:src = "@{/image/gp.png}">
-                </div>
-                <div class="signin-link">
-                    Already a member? <a href="">SignIn now</a>
-                </div>
-            </form>
+    <div class="signin">
+      <div class="form-group">
+        <input type="email" name="email" placeholder="Email" required="">
+      </div>
+      <div class="form-group">
+        <input type="password" name="password" placeholder="Password" required="">
+      </div>
+      <div class="forget-password">
+        <div class="check-box">
+          <input type="checkbox" id="checkbox">
+          <label for="checkbox">Remember me</label>
         </div>
+        <a href="#">Forget password?</a>
+      </div>
+      <button type="submit" class="btn">LOGIN</button>
+      <div class="account-exist">
+        Create New an account? <a href="/register" id="signup">Signup</a>
+      </div>
     </div>
+  </form>
 </div>
-<script>
-    const loginText = document.querySelector(".title-text .login");
-    const loginForm = document.querySelector("form.login");
-    const loginBtn = document.querySelector("label.login");
-    const signupBtn = document.querySelector("label.signup");
-    const signupLink = document.querySelector("form .signup-link a");
-    signupBtn.onclick = (()=>{
-        loginForm.style.marginLeft = "-50%";
-        loginText.style.marginLeft = "-50%";
-    });
-    loginBtn.onclick = (()=>{
-        loginForm.style.marginLeft = "0%";
-        loginText.style.marginLeft = "0%";
-    });
-    signupLink.onclick = (()=>{
-        signupBtn.click();
-        return false;
-    });
-</script>
+
+</div>
+
+<!--<script th:src="@{/js/log.js}"></script>-->
 </body>
 </html>
+

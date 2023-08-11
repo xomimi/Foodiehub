@@ -1,20 +1,26 @@
 package com.example.food_order.services;
 
-import com.example.food_order.dto.UserDto;
+
 import com.example.food_order.entity.User;
+import com.example.food_order.pojo.UserPojo;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Optional;
+
 
 public interface UserService {
-    UserDto save(UserDto userDto) throws IOException;
+    UserPojo save(UserPojo userPojo) throws IOException;
 
     List<User> fetchAll();
 
-    User fetchById(Integer id);
+    Optional<User> fetchById(Integer id);
 
     void deleteById(Integer id);
 
     void sendEmail();
 
+    User fatchByEmail(String email);
+
+    void update (UserPojo userPojo) throws IOException;
 }

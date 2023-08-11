@@ -1,6 +1,5 @@
 package com.example.food_order.entity;
 
-
 import jakarta.persistence.*;
 
 import lombok.*;
