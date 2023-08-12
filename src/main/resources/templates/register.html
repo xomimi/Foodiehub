@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register+</title>
+  <link rel="stylesheet" th:href="@{/css/pom.css}">
+</head>
+<body>
+<div class="wrapper">
+  <div class="headline">
+    <h1>Welcome. We exist to make consignment easier.</h1>
+  </div>
+  <form class="form" onsubmit="fun()" th:method="@{post}" th:action="@{/user/create}"
+        th:object="${user}">
+    <div class="signup">
+      <div class="form-group">
+        <input type="text" th:field="*{fullname}" th:value="${user.fullname}" placeholder="Full Name" required=""/>
+        <p th:if="${requestError!=null}"
+           th:text="${requestError['fullname']}"></p>
+      </div>
+      <div class="form-group">
+        <input type="text" th:field="*{email}" th:value="${user.email}" placeholder="Email" required=""/>
+        <p th:if="${requestError!=null}"
+           th:text="${requestError['email']}"></p>
+      </div>
+      <div class="form-group">
+        <input type="number" th:field="*{mobile_no}" th:value="${user.mobile_no}"placeholder="Phone Number" required=""/>
+        <p th:if="${requestError!=null}"
+           th:text="${requestError['mobile_no']}"></p>
+      </div>
+      <div class="form-group">
+        <input type="password" th:field="*{password}" th:value="${user.password}" placeholder="Password" required=""/>
+        <p th:if="${requestError!=null}"
+           th:text="${requestError['password']}"></p>
+      </div>
+      <!--      <div class = "form-group">-->
+      <!--        <input type="file" name="image" accept="image/*" class="form-control-file">-->
+      <!--      </div>-->
+      <button type="submit" class="btn" >SIGN UP</button>
+      <div class="account-exist">
+        Already have an account? <a th:href="@{/login}" id="login">Login</a>
+      </div>
+    </div>
+  </form>
+</div>
+<script>
+  function fun(){
+    alert("Successfully register");
+  }
+</script>
+</body>
+</html>

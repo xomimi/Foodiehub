@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Home</title>
+</head>
+<body>
+<!-- Header -->
+<header class="header">
+  <a href="/" class="logo">Food Hub<span class="yellow">Delly</span></a>
+  <nav class="navbar">
+    <a href="#home">Home</a>
+    <a href="/profile">Profile</a>
+    <a href="#contact">Contact Us</a>
+    <a th:href="'/card/cardmenu/'+${userDetail.id}" class="btn">Make an Order</a>
+  </nav>
+  <!-- Hamburger -->
+  <div class="hamburger">
+    <img th:src = "@{/photo/grid-outline.svg}" alt="" />
+  </div>
+</header>
+
+<section class="home" id="home">
+  <div class="menu" id="Menu">
+    <h1>Our<span>Menu</span></h1>
+  </div>
+  <div class="gallery">
+    <div class="context" th:each="item:${items}">
+      <!--            <img th:src = "@{/photo/online.jpeg}">-->
+      <img th:src="'data:image/png;base64,'+${item.imageBase64}"/>
+      <!--            <h3>Deliver</h3>-->
+      <h3 th:text="${item.item_name}"></h3>
+      <!--            <p>information related to online delivery system </p>-->
+      <p th:text="${item.item_description}"></p>
+      <!--            <h6>$10.00</h6>-->
+      <h6 th:text="${item.item_price}"></h6>
+      <ul>
+        <li><i class = "fa fa-star checked"></i></li>
+        <li><i class = "fa fa-star checked"></i></li>
+        <li><i class = "fa fa-star checked"></i></li>
+        <li><i class = "fa fa-star checked"></i></li>
+        <li><i class = "fa fa-star "></i></li>
+      </ul>
+      <form onsubmit="fun()" th:action="@{/order/saveorder}" th:method="@{post}" th:object="${orderPojo}">
+        <input type="hidden" th:value="${userDetail.id}" name="user_id"></input>
+        <input type="hidden" th:value="${item.id}" name="adminPage_id"></input>
+        <button class = "buy-all">Order Now</button>
+      </form>
+      <!--            <form th:action="@{/order/saveorder}" th:method="@{post}" th:object="${orderPojo}">-->
+      <!--                <p th:field="*{user_id}" th:value="${userDetail.id}" th:text="${userDetail.id}"></p>-->
+      <!--                <p th:field="*{adminpage_id}" th:value="${item.id}" th:text="${item.id}"></p>-->
+      <!--                <button class = "buy-all">Order Now</button>-->
+      <!--            </form>-->
+    </div>
+  </div>
+</section>
+
+<!-- --Footer-- -->
+<footer class="footer">
+  <div class="top">
+    <div class="content">
+      <a href="" class="logo">Food Hub<span class="yellow">Delly</span></a>
+      <p>
+        Lorem ipsum dolor sit amet,adipiscing elit. Eu, montes, metus
+        porttitor consectetur pretium. Euismod imperdiet
+      </p>
+    </div>
+
+    <div class="links">
+      <div class="link">
+        <h4>Contact Information</h4>
+        <div>
+          <img th:src="@{/photo/location-cross.svg}" alt="" />
+          <span>122,Albert St, Port Melbourne,Vic 3207.</span>
+        </div>
+        <div>
+          <img th:src="@{/photo/sms-tracking.svg}" alt="" />
+          <span>dellyfoodhub@gmail.com</span>
+        </div>
+      </div>
+
+      <div class="link">
+        <h4>Quick Links</h4>
+        <a href="#">Contact Us</a>
+        <a href="#">Download</a>
+      </div>
+
+      <div class="link">
+        <h4>Legal</h4>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Term of Use</a>
+        <a href="#">Conditions</a>
+        <a href="#">Location</a>
+      </div>
+
+      <div class="link">
+        <h4>Connect with Us</h4>
+        <div>
+          <img th:src="@{/photo/instagram.svg}" alt="" />
+          <span>Instagram</span>
+        </div>
+        <div>
+          <img th:src="@{/photo/twitter.svg}" alt="" />
+          <span>Twitter</span>
+        </div>
+        <div>
+          <img th:src="@{/photo/facebook.svg}" alt="" />
+          <span>Facebook</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bottom">
+    <p>Copyright © 2010-2022 Deliveroo Company S.L. All rights reserved.</p>
+  </div>
+</footer>
+
+<div class="scroll-top">
+  <img th:src="@{/photo/arrow-up-outline.svg}" alt="" />
+</div>
+
+<!--<script src="menscr.js"></script>-->
+
+<script th:src="@{/js/system.js}"></script>
+</body>
+</html>
