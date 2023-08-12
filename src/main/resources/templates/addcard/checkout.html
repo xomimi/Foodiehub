@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>checkout</title>
+
+  <!-- font awesome cdn link  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <!-- custom css file link  -->
+  <link rel="stylesheet" th:href="@{/css/one.css}">
+
+</head>
+<body>
+<div class="container">
+
+  <section class="checkout-form">
+
+    <h1 class="heading">complete your order</h1>
+
+    <form th:method="@{post}">
+
+      <div class="display-order">
+        <span class="grand-total" > Rs 700</span>
+        <!--        th:text="${total}" th:value="${total}"-->
+      </div>
+      <div class="flex">
+        <div class="inputBox">
+          <span>payment method</span>
+          <select name="method">
+            <option value="cash on delivery" selected>cash on devlivery</option>
+          </select>
+        </div>
+        <div class="inputBox">
+          <span>Permanent Address</span>
+          <input type="text" placeholder="e.g. flat no." name="flat" required>
+        </div>
+        <div class="inputBox">
+          <span>Temporary Address</span>
+          <input type="text" placeholder="e.g. street name" name="street" required>
+        </div>
+        <div class="inputBox">
+          <span>city</span>
+          <input type="text" placeholder="e.g. Kathmandu" name="city" required>
+        </div>
+      </div>
+
+      <!--      <input type="submit" value="order now" name="order_btn" class="btn">-->
+      <a th:href="@{/th-home/create}" onclick="fun()" class="btn">Order now</a>
+    </form>
+
+  </section>
+
+</div>
+
+<!-- custom js file link  -->
+<!--<script src="js/script.js"></script>-->
+<script>
+  function fun(){
+    alert("Order checkout Successful ");
+  }
+</script>
+
+</body>
+</html>

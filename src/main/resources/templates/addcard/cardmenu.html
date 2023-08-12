@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart Details</title>
+
+  <!-- font awesome cdn link  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <!-- custom css file link  -->
+  <link rel="stylesheet" th:href="@{/css/one.css}">
+
+</head>
+<body>
+<header class="header">
+  <a href="/" class="logo">Anna Bazar<span class="yellow">roo</span></a>
+  <div class="myinfo" >
+    <a href="#">Profile</a>
+  </div>
+  <nav class="navbar">
+    <a th:href="@{/th-home/create}" class="btn">Go Home</a>
+  </nav>
+
+</header>
+
+<div class="container">
+
+  <section class="shopping-cart">
+
+    <h1 class="heading">Cart Menu</h1>
+
+
+
+    <table>
+
+      <thead>
+      <tr>
+        <th>image</th>
+        <th>name</th>
+        <th>price</th>
+        <th>action</th>
+      </tr>
+      <tbody>
+      <tr th:each="order:${orderListPojo}">
+        <td>
+          <img th:src="'data:image/png;base64,'+${order.image}" width="100"/>
+        </td>
+        <!--        <td th:text="${order.image}"></td>-->
+        <td th:text="${order.item_price}"></td>
+        <td th:text="${order.item_name}"></td>
+        <td>
+          <!--          <a class="delete" th:href="">Delete</a>-->
+
+          <a class="delete" th:href="@{~/card/delete/}+${order.id}">Delete</a>
+
+        </td>
+      </tr>
+      </tbody>
+      </thead>
+
+    </table>
+
+    <div class="checkout-btn">
+      <a href="/checkout" class="btn">procced to checkout</a>
+    </div>
+
+  </section>
+
+</div>
+
+<!-- custom js file link  -->
+<!--<script src="js/script.js"></script>-->
+
+</body>
+</html>
