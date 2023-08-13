@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile</title>
+
+  <!-- custom css file link  -->
+  <link rel="stylesheet" th:href="@{/css/all.css}">
+
+</head>
+<body>
+<header class="header">
+  <a href="/" class="logo">Food Hub<span class="yellow">Delly</span></a>
+  <nav class="navbar">
+    <a th:href="@{/th-home/create}" class="btn">Go Home</a>
+  </nav>
+</header>
+<!--<a href="#" class="delete-btn">Go Home</a>-->
+<div class="container">
+
+
+  <div class="profile" th:method = "@{post}" th:action = "@{/profile}">
+    <!--        <img th:src="@{/photo/default-avatar.png}">-->
+    <img th:src="'data:image/png;base64,'+${edi.imageBase64}"/>
+    <!--        <h3>Paribesh koju</h3>-->
+    <h3 th:text = "${user.getFullName()}"></h3>
+    <a href="/editprofile" class="btn">Edit Profile</a>
+
+    <form method="post" th:action="@{/logout}">
+      <!--        <a href="#" class="delete-btn">logout</a>-->
+      <button type="Logout" class="delete-btn">Logout</button>
+    </form>
+  </div>
+</div>
+
+</body>
+</html>
