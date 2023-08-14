@@ -12,6 +12,7 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.annotation.Rollback;
 
 import java.util.List;
+import java.util.Optional;
 
 @DataJpaTest
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
@@ -73,5 +74,20 @@ public class AdminPageTesting {
 
         Assertions.assertThat(productUpdated.getItem_price()).isEqualTo("$ 23");
 
+    }
+
+    @Test
+    @Order(5)
+    @Rollback(value = false)
+    public void deleteProductTest(){
+        AdminPage prod = adminPageRepo.findById(1).get();
+        adminPageRepo.delete(prod);
+
+        AdminPage prod1 = null;
+        Optional<AdminPage> isMsg = adminPageRepo.findById(1);
+        if(isMsg.isPresent()){
+            prod1 = isMsg.get();
+        }
+        Assertions.assertThat(prod1).isNull();
     }
 }
