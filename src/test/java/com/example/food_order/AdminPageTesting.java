@@ -59,4 +59,19 @@ public class AdminPageTesting {
         List<AdminPage> prod = adminPageRepo.findAll();
         Assertions.assertThat(prod.size()).isGreaterThan(0);
     }
+
+    @Test
+    @Order(4)
+    @Rollback(value = false)
+    public void updateProductPriceTest(){
+
+        AdminPage prod = adminPageRepo.findById(1).get();
+
+        prod.setItem_price("Rs 123");
+
+        AdminPage productUpdated =  adminPageRepo.save(prod);
+
+        Assertions.assertThat(productUpdated.getItem_price()).isEqualTo("$ 23");
+
+    }
 }
