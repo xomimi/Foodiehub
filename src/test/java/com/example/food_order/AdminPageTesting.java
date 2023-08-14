@@ -11,6 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.annotation.Rollback;
 
+import java.util.List;
+
 @DataJpaTest
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class AdminPageTesting {
@@ -42,5 +44,19 @@ public class AdminPageTesting {
 
         Assertions.assertThat(product.getId()).isGreaterThan(0);
 
+    }
+
+    @Test
+    @Order(2)
+    public  void getProductTest(){
+        AdminPage prodsent= adminPageRepo.findById(1).get();
+        Assertions.assertThat(prodsent.getId()).isEqualTo(1);
+    }
+
+    @Test
+    @Order(3)
+    public void getListOfProductTest(){
+        List<AdminPage> prod = adminPageRepo.findAll();
+        Assertions.assertThat(prod.size()).isGreaterThan(0);
     }
 }
